@@ -16,7 +16,7 @@ export class NgxFirebaseAuthService {
 
   /**
    * Get the current User Observable from AngularFireAuth
-   * @return Observable<KenaraUser> if the user is authenticated.
+   * @return Observable<FirebaseUser> if the user is authenticated.
    */
   public get currentUser$(): Observable<FirebaseUser> {
     return this.afAuth.authState.pipe(shareReplay());
@@ -50,7 +50,7 @@ export class NgxFirebaseAuthService {
    * Checks if the user email is verified.
    * @return True if the user is authorized.
    */
-  public get authorized(): boolean {
+  public get isVerified(): boolean {
     return this.currentUser && this.currentUser.emailVerified;
   }
 
@@ -93,7 +93,7 @@ export class NgxFirebaseAuthService {
   }
 
   /**
-   * Sends password reset mail
+   * Sends reset password mail
    * @return void
    */
   public sendPasswordResetEmail(email: string): Promise<void> {
@@ -101,7 +101,7 @@ export class NgxFirebaseAuthService {
   }
 
   /**
-   * Reauthenticates an user, e.g. when updating user email
+   * Reauthenticate an user, e.g. when updating user email
    * @return return new firebase user
    */
   public reauthenticateUser(password: string): Promise<FirebaseUser> {

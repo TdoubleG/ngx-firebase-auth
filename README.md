@@ -3,12 +3,13 @@
 Open Source Library for Angular Web Apps to integrate a simple firebase authentication service.
 
 ## Versions
-|| |      
-|---|:---:| 
-|` @angular/common` |`>=9.1.x < 10.2.1` |
-| `@angular/core` | `>=9.1.x < 10.2.1` |
+|Package| Version|      
+|---|---| 
+|` @angular/common` |`>=9.1.x <= 10.2.x` |
+| `@angular/core` | `>=9.1.x <= 10.2.x` |
 | `@angular/fire` | `6.0.4` |
 | `firebase`| `8.0.0` |
+| `rxjs`| `>= 6.x.x <= 6.6.x` |
 
 ## Features
 |Feature| |      

@@ -1,0 +1,17 @@
+{
+  "name": "ngx-firebase-auth",
+  "version": "1.0.1",
+  "peerDependencies": {
+    "@angular/common": ">=9.1.x < 10.2.1",
+    "@angular/core": ">=9.1.x < 10.2.1",
+    "@angular/platform-browser": ">=9.1.x < 10.2.1",
+    "@angular/platform-browser-dynamic": ">=9.1.x < 10.2.1",
+    "@angular/fire": "^6.0.4",
+    "firebase": "^8.0.0",
+    "rxjs": "6.6.3"
+  },
+  "dependencies": {
+    "@angular/fire": "^6.0.4",
+    "firebase": "^8.0.0"
+  }
+}

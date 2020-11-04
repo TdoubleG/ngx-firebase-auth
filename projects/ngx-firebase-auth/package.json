@@ -31,7 +31,7 @@
     "@angular/platform-browser-dynamic": ">=9.1.x <= 10.2.x",
     "@angular/fire": "^6.0.4",
     "firebase": "^8.0.0",
-    "rxjs": "6.6.3"
+    "rxjs": ">= 6.x.x <= 6.6.x"
   },
   "dependencies": {
     "@angular/fire": "^6.0.4",

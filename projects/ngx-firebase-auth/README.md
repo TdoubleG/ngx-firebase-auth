@@ -14,7 +14,7 @@ Open Source Library for Angular Web Apps to integrate a simple firebase authenti
 ## Features
 |Feature| |      
 |---|:---:| 
-| signInWithEmailAndPassword | :heavy_check_mark:|
+| createUserWithEmailAndPassword | :heavy_check_mark:|
 | signInWithEmailAndPassword | :heavy_check_mark: |
 | signOut| :heavy_check_mark: |
 | sendEmailVerification| :heavy_check_mark: |

@@ -1,6 +1,7 @@
 {
   "name": "ngx-firebase-auth",
-  "version": "1.0.3",
+  "version": "1.0.4",
+  "description": "Simple lightweight Firebase Authentication Service for Angular 9 | 10",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tdoubleg/ngx-firebase-auth.git"
@@ -24,6 +25,7 @@
     "url": "https://github.com/tdoubleg/ngx-firebase-auth/issues"
   },
   "homepage": "https://github.com/tdoubleg/ngx-firebase-auth#readme",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "peerDependencies": {
     "@angular/common": ">=9.1.x <= 10.2.x",
     "@angular/core": ">=9.1.x <= 10.2.x",

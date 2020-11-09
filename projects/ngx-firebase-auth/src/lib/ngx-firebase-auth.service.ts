@@ -27,7 +27,7 @@ export class NgxFirebaseAuthService {
    * @return The user or null if the user is not authenticated.
    */
   public get currentUser(): FirebaseUser {
-    return this.authenticated ? auth().currentUser : null;
+    return auth().currentUser ? auth().currentUser : null;
   }
 
   /**
@@ -35,7 +35,7 @@ export class NgxFirebaseAuthService {
    * @return The user id or null if the user is not authenticated.
    */
   public get currentUserId(): string {
-    return this.authenticated ? this.currentUser.uid : '';
+    return this.currentUser ? this.currentUser.uid : '';
   }
 
   /**

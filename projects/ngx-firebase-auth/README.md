@@ -99,5 +99,6 @@ interface AuthContext {
 ## Build by and for developers
 
 Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
+Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
 If you like this project, support [ngx-firebase-auth](https://github.com/TdoubleG/ngx-firebase-auth) by starring :star: and sharing it :loudspeaker:
 

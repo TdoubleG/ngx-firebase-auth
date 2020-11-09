@@ -1,8 +1,10 @@
 # NgxFirebaseAuth
-
 Open Source Library for Angular Web Apps to integrate a simple firebase authentication service.
 
-## Versions
+## Install
+`npm install ngx-firebase-auth`
+
+## Peer dependencies
 |Package| Version|      
 |---|---| 
 |` @angular/common` |`>=9.1.x <= 10.2.x` |
@@ -21,8 +23,7 @@ Open Source Library for Angular Web Apps to integrate a simple firebase authenti
 | reauthenticateWithCredential| :heavy_check_mark: |
 
 ## Usage
-The usage of this library is very easy. To use the Service just inject it in the constructor like every other service
-
+ To use the Service just inject it in the constructor like every other service
 ```
 constructor(private authService: NgxFirebaseAuthService) {
     // some code
@@ -101,4 +102,3 @@ interface AuthContext {
 Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
 Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
 If you like this project, support [ngx-firebase-auth](https://github.com/TdoubleG/ngx-firebase-auth) by starring :star: and sharing it :loudspeaker:
-

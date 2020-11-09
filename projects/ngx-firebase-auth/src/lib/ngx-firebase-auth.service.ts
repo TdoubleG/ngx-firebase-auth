@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
 import { AuthContext } from './models/authContext';
-import auth = firebase.auth;
-import UserCredential = firebase.auth.UserCredential;
-import FirebaseUser = firebase.User;
-
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +14,7 @@ export class NgxFirebaseAuthService {
    * Get the current User Observable from AngularFireAuth
    * @return Observable<FirebaseUser> if the user is authenticated.
    */
-  public get currentUser$(): Observable<FirebaseUser> {
+  public get currentUser$(): Observable<firebase.User> {
     return this.afAuth.authState.pipe(shareReplay());
   }
 
@@ -26,8 +22,8 @@ export class NgxFirebaseAuthService {
    * Gets the current user.
    * @return The user or null if the user is not authenticated.
    */
-  public get currentUser(): FirebaseUser {
-    return auth().currentUser ? auth().currentUser : null;
+  public get currentUser(): firebase.User {
+    return this.authState;
   }
 
   /**
@@ -43,7 +39,7 @@ export class NgxFirebaseAuthService {
    * @return True if the user is authenticated.
    */
   public get authenticated(): boolean {
-    return this.currentUser != null;
+    return this.authState != null;
   }
 
   /**
@@ -54,7 +50,13 @@ export class NgxFirebaseAuthService {
     return this.currentUser && this.currentUser.emailVerified;
   }
 
+  private authState: firebase.User;
+
+
   constructor(private afAuth: AngularFireAuth) {
+    this.afAuth.authState.subscribe((authState: firebase.User) => {
+      this.authState = authState;
+    });
   }
 
   /**
@@ -62,7 +64,7 @@ export class NgxFirebaseAuthService {
    * @param context The register parameters.
    * @return The user credentials.
    */
-  public register(context: AuthContext): Promise<UserCredential> {
+  public register(context: AuthContext): Promise<firebase.auth.UserCredential> {
     return this.afAuth.createUserWithEmailAndPassword(context.email, context.password);
   }
 
@@ -71,7 +73,7 @@ export class NgxFirebaseAuthService {
    * @param context The login parameters.
    * @return The user credentials.
    */
-  public login(context: AuthContext): Promise<UserCredential> {
+  public login(context: AuthContext): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithEmailAndPassword(context.email, context.password);
   }
 
@@ -89,7 +91,7 @@ export class NgxFirebaseAuthService {
    * @return void
    */
   public sendEmailVerification(): Promise<void> {
-    return auth().currentUser.sendEmailVerification();
+    return firebase.auth().currentUser.sendEmailVerification();
   }
 
   /**
@@ -104,8 +106,8 @@ export class NgxFirebaseAuthService {
    * Reauthenticate an user, e.g. when updating user email
    * @return return new firebase user
    */
-  public reauthenticateUser(password: string): Promise<FirebaseUser> {
-    const firebaseUser: FirebaseUser = this.currentUser;
+  public reauthenticateUser(password: string): Promise<firebase.User> {
+    const firebaseUser: firebase.User = this.currentUser;
     const credentials = firebase.auth.EmailAuthProvider.credential(firebaseUser.email, password);
     return new Promise((resolve, reject) => {
       firebaseUser.reauthenticateWithCredential(credentials).then(() => {

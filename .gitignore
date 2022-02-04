@@ -47,3 +47,4 @@ Thumbs.db
 /README.md
 /.editorconfig
 /projects/ngx-firebase-auth/node_modules/
+/.angular/

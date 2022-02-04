@@ -1,17 +1,14 @@
 # NgxFirebaseAuth
 Open Source Library for Angular Web Apps to integrate a simple firebase authentication service.
-
+Supporting  `@angular v13.2.1`
 ## Install
 `npm install ngx-firebase-auth`
 
 ## Peer dependencies
 |Package| Version|      
-|---|---| 
-|` @angular/common` |`>=11.1.x <= 12.2.x` |
-| `@angular/core` | `>=11.1.x <= 12.2.x` |
-| `@angular/fire` | `6.1.5` |
-| `firebase`| `8.1.1` |
-| `rxjs`| `>= 6.6.x <= 7.3.x` |
+|---|---|
+| `@angular/fire` | `7.2.0` |
+| `firebase`| `9.6.6` |
 
 ## Features
 |Feature| |      

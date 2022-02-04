@@ -1,17 +1,14 @@
 # NgxFirebaseAuth
 Open Source Library for Angular Web Apps to integrate a simple firebase authentication service.
-
+Supporting  `@angular v13.2.1`
 ## Install
 `npm install ngx-firebase-auth`
 
 ## Peer dependencies
 |Package| Version|      
-|---|---| 
-|` @angular/common` |`>=9.1.x <= 10.2.x` |
-| `@angular/core` | `>=9.1.x <= 10.2.x` |
-| `@angular/fire` | `6.0.4` |
-| `firebase`| `8.0.0` |
-| `rxjs`| `>= 6.x.x <= 6.6.x` |
+|---|---|
+| `@angular/fire` | `7.2.0` |
+| `firebase`| `9.6.6` |
 
 ## Features
 |Feature| |      
@@ -23,7 +20,7 @@ Open Source Library for Angular Web Apps to integrate a simple firebase authenti
 | reauthenticateWithCredential| :heavy_check_mark: |
 
 ## Usage
- To use the Service just inject it in the constructor like every other service
+To use the Service just inject it in the constructor like every other service
 ```
 constructor(private authService: NgxFirebaseAuthService) {
     // some code
@@ -73,7 +70,7 @@ private (emailInput: string, passwordInput: string): void {
 **Note**:  
 UserCredential = firebase.auth.UserCredential  
 FirebaseUser = firebase.User
-          
+
 |Type | Name | Description | Return Value |      
 |---|---|---|---|
 | `getter` | `currentUser$` | Get the current User Observable from AngularFireAuth | `Observable<FirebaseUser>` |
@@ -99,6 +96,5 @@ interface AuthContext {
 
 ## Build by and for developers
 
-Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
 Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
 If you like this project, support [ngx-firebase-auth](https://github.com/TdoubleG/ngx-firebase-auth) by starring :star: and sharing it :loudspeaker:

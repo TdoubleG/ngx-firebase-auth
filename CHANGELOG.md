@@ -1,9 +1,10 @@
 # CHANGELOG NgxFirebaseAuth
 
-### Version 1.2.1
-- updated dependencies
-    - supporting now Angular >=12.2.x <=13.2.x
-    - firebase 8.8.1
+### Version 1.2.2
+- updated dependencies and supporting now
+  - Angular 13.2.1
+  - @angular/fire 7.2.0
+  - firebase 9.6.6
 
 ### Version 1.1.0
 - updated dependencies

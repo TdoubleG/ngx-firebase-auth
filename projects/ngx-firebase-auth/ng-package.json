@@ -3,9 +3,5 @@
   "dest": "../../dist/ngx-firebase-auth",
   "lib": {
     "entryFile": "src/public-api.ts"
-  },
-  "whitelistedNonPeerDependencies": [
-    "@angular/fire",
-    "firebase"
-  ]
+  }
 }

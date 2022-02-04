@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import firebase from 'firebase/app';
-import { Observable } from 'rxjs';
-import { shareReplay } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat';
+import { Observable, shareReplay } from 'rxjs';
 import { AuthContext } from './models/authContext';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class NgxFirebaseAuthService {
    * Get the current User Observable from AngularFireAuth
    * @return Observable<FirebaseUser> if the user is authenticated.
    */
-  public get currentUser$(): Observable<firebase.User> {
+  public get currentUser$(): Observable<firebase.User | null> {
     return this.afAuth.authState.pipe(shareReplay());
   }
 
@@ -22,7 +21,7 @@ export class NgxFirebaseAuthService {
    * Gets the current user.
    * @return The user or null if the user is not authenticated.
    */
-  public get currentUser(): firebase.User {
+  public get currentUser(): firebase.User | null {
     return this.authState;
   }
 
@@ -46,15 +45,15 @@ export class NgxFirebaseAuthService {
    * Checks if the user email is verified.
    * @return True if the user is authorized.
    */
-  public get isVerified(): boolean {
+  public get isVerified(): boolean | null {
     return this.currentUser && this.currentUser.emailVerified;
   }
 
-  private authState: firebase.User;
-
+  private authState: firebase.User | null;
 
   constructor(private afAuth: AngularFireAuth) {
-    this.afAuth.authState.subscribe((authState: firebase.User) => {
+    this.authState = null;
+    this.afAuth.authState.subscribe((authState: firebase.User | null) => {
       this.authState = authState;
     });
   }
@@ -91,7 +90,12 @@ export class NgxFirebaseAuthService {
    * @return void
    */
   public sendEmailVerification(): Promise<void> {
-    return firebase.auth().currentUser.sendEmailVerification();
+    const currentUser: firebase.User | null = firebase.auth().currentUser;
+    if (currentUser) {
+      return currentUser.sendEmailVerification();
+    }
+
+    return new Promise(async (_, reject) => reject('Could not call sendEmailVerification - No User available!'));
   }
 
   /**
@@ -107,15 +111,19 @@ export class NgxFirebaseAuthService {
    * @return return new firebase user
    */
   public reauthenticateUser(password: string): Promise<firebase.User> {
-    const firebaseUser: firebase.User = this.currentUser;
-    const credentials = firebase.auth.EmailAuthProvider.credential(firebaseUser.email, password);
-    return new Promise((resolve, reject) => {
-      firebaseUser.reauthenticateWithCredential(credentials).then(() => {
-        resolve(firebaseUser);
-      }).catch((err) => {
-        console.log(err);
-        reject('Verification failed');
+    const firebaseUser: firebase.User | null = this.currentUser;
+    if (firebaseUser?.email != null) {
+      const credentials = firebase.auth.EmailAuthProvider.credential(firebaseUser.email, password);
+      return new Promise((resolve, reject) => {
+        firebaseUser.reauthenticateWithCredential(credentials).then(() => {
+          resolve(firebaseUser);
+        }).catch((err) => {
+          console.log(err);
+          reject('Verification failed');
+        });
       });
-    });
+    }
+
+    return new Promise((_, reject) => reject('Could not call reauthenticateUser - No User available!'));
   }
 }

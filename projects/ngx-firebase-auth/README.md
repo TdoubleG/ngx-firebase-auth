@@ -7,11 +7,11 @@ Open Source Library for Angular Web Apps to integrate a simple firebase authenti
 ## Peer dependencies
 |Package| Version|      
 |---|---| 
-|` @angular/common` |`>=9.1.x <= 10.2.x` |
-| `@angular/core` | `>=9.1.x <= 10.2.x` |
-| `@angular/fire` | `6.0.4` |
-| `firebase`| `8.0.0` |
-| `rxjs`| `>= 6.x.x <= 6.6.x` |
+|` @angular/common` |`>=11.1.x <= 12.2.x` |
+| `@angular/core` | `>=11.1.x <= 12.2.x` |
+| `@angular/fire` | `6.1.5` |
+| `firebase`| `8.1.1` |
+| `rxjs`| `>= 6.6.x <= 7.3.x` |
 
 ## Features
 |Feature| |      
@@ -99,6 +99,5 @@ interface AuthContext {
 
 ## Build by and for developers
 
-Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
 Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
 If you like this project, support [ngx-firebase-auth](https://github.com/TdoubleG/ngx-firebase-auth) by starring :star: and sharing it :loudspeaker:

@@ -7,8 +7,10 @@ Supporting  `@angular v13.2.1`
 ## Peer dependencies
 |Package| Version|      
 |---|---|
+| `@angular/core` | `>=11.0.x <=13.2.x` |
 | `@angular/fire` | `7.2.0` |
 | `firebase`| `9.6.6` |
+| `rxjs`| `>=6.5.x <=7.4.x` |
 
 ## Features
 |Feature| |      
@@ -20,7 +22,7 @@ Supporting  `@angular v13.2.1`
 | reauthenticateWithCredential| :heavy_check_mark: |
 
 ## Usage
- To use the Service just inject it in the constructor like every other service
+To use the Service just inject it in the constructor like every other service
 ```
 constructor(private authService: NgxFirebaseAuthService) {
     // some code
@@ -70,7 +72,7 @@ private (emailInput: string, passwordInput: string): void {
 **Note**:  
 UserCredential = firebase.auth.UserCredential  
 FirebaseUser = firebase.User
-          
+
 |Type | Name | Description | Return Value |      
 |---|---|---|---|
 | `getter` | `currentUser$` | Get the current User Observable from AngularFireAuth | `Observable<FirebaseUser>` |

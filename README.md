@@ -7,8 +7,10 @@ Supporting  `@angular v13.2.1`
 ## Peer dependencies
 |Package| Version|      
 |---|---|
+| `@angular/core` | `>=11.0.x <=13.2.x` |
 | `@angular/fire` | `7.2.0` |
 | `firebase`| `9.6.6` |
+| `rxjs`| `>=6.5.x <=7.4.x` |
 
 ## Features
 |Feature| |      

@@ -1,6 +1,6 @@
 {
   "name": "firebase-auth",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~13.2.1",
     "@angular/platform-browser-dynamic": "~13.2.1",
     "@angular/router": "~13.2.1",
-    "rxjs": "~7.5.2",
+    "rxjs": "~6.5.0",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
   },

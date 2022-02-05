@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat';
+import firebase from 'firebase/compat/app';
 import { Observable, shareReplay } from 'rxjs';
 import { AuthContext } from './models/authContext';
+import User = firebase.User;
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class NgxFirebaseAuthService {
    * Get the current User Observable from AngularFireAuth
    * @return Observable<FirebaseUser> if the user is authenticated.
    */
-  public get currentUser$(): Observable<firebase.User | null> {
+  public get currentUser$(): Observable<User | null> {
     return this.afAuth.authState.pipe(shareReplay());
   }
 

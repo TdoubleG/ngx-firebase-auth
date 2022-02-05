@@ -1,6 +1,6 @@
 {
   "name": "ngx-firebase-auth",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "description": "Simple lightweight Firebase Authentication Service for Angular 12+",
   "repository": {
     "type": "git",

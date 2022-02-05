@@ -6,6 +6,7 @@
     "declaration": true,
     "inlineSources": true,
     "declarationMap": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "src/test.ts",

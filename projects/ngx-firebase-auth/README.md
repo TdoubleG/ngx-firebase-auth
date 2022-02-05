@@ -96,6 +96,13 @@ interface AuthContext {
 ```
 
 
+# FAQ
+### `Error TS2344: Type 'T[K]' does not satisfy the constraint`
+Add the following line in your main `tsconfig.json` inside `compilerOptions`:
+
+`"skipLibcheck": true`
+
+
 ## Build by and for developers
 
 Feel free to provide a PR | open an appropriate issue [here](https://github.com/TdoubleG/ngx-firebase-auth/issues)
